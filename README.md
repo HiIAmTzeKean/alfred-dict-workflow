@@ -1,25 +1,32 @@
-# Alfred 查词扩展
+# Alfred Translation
 
-多功能、快速、易用的 Alfred 查词扩展。
+## Installation
 
-**请到 release 页面下载最新的 workflow，双击安装。**
+Tested on Alfred 5 MacOS Sonoma 14.2
 
-**为了使用方便，请设置取词快捷键。**
+Requirements:
+- lxml
+- python 2.7.18
+ 
+```bash
+pip install lxml
+brew install pyenv
+pyenv install 2.7.18
+pyenv global 2.7.18
 
-## 使用系统内置牛津词典
+```
 
-由于每次更新 macOS 词典格式都会改变，最新版本不保证可用，旧版本支持也将移除。
+Reference to install python2 on mac can be found below
+- https://stackoverflow.com/questions/60298514/how-to-reinstall-python2-from-homebrew 
 
-当前版本仅支持 10.13。10.13 以下系统请使用旧版本 workflow。
+## Changes made
+```bash
+PATH=$PATH:$(pyenv root)/shims
+```
+Has been added into the script to force the terminal to use python2 as the default python.
+Refer to the plist file.
 
-先打开 Dictionary.app，安装牛津英汉汉英词典。
-
-然后安装 lxml ：
-
-    command -v pip || sudo easy_install pip
-    sudo pip install lxml
-
-## 简介
+## Post notes from Developer
 
 * 支持的词典：
     * 系统词典，支持朗道、牛津词典
